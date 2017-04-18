@@ -1,0 +1,9 @@
+{% extends "basecomun" %}
+
+{% block contenido %}
+{% include 'includes/nav1.html' %}
+
+{% block visitantesContenido %}
+{% endblock visitantesContenido %}
+
+{% endblock contenido %}

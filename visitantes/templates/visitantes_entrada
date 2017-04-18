@@ -1,0 +1,6 @@
+{% extends "basevisitantes" %}
+
+{% block visitantesContenido %}
+	<h1>Hola Mundo</h1>
+	<p>Mi url deberia ser <strong>{{ request.path }}</strong></p>
+{% endblock visitantesContenido %}

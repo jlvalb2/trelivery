@@ -1,0 +1,29 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'visitantes:inicio' %}">IFlunch</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="{% if request.resolver_match.url_name == 'sobre-nos' %}active{% endif %}">
+              <a href="{% url 'visitantes:sobre-nos' %}">Sobre nós</a></li>
+        <li class="{% if request.resolver_match.url_name == 'cadastre-seu-restaurante' %}active{% endif %}">
+              <a href="{% url 'visitantes:cadastre-seu-restaurante' %}">Cadastre seu Restaurante</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="{% if request.resolver_match.url_name == 'cadastre-se' %}active{% endif %}">
+              <a href="{% url 'visitantes:cadastre-se' %}">
+                <span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
+        <li class="{% if request.resolver_match.url_name == 'cliente-login' %}active{% endif %}">
+                <a href="{% url 'visitantes:cliente-login' %}">
+                    <span class="glyphicon glyphicon-log-in"></span> Clientes</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	{% block metas %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% endblock %}
+
+    {% block headBootstrap %}
+            <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% endblock%}
+
+	<title>{% block titulo %}{% endblock %}</title>
+
+    {% block headVarios %}
+    {% load staticfiles %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+    {% comment %}
+    Quitar esto de aqui y ponerlo donde proceda
+    <script type="application/javascript" src="{% static 'js/ceps.js' %}"></script>        
+    {% endcomment %}
+
+    {% endblock %}
+</head>
+<body>
+    <div class="container">
+    {% block noscript %}
+        <noscript>
+            <p>Benvindo a Iflunch</p>
+            <p>O site da Iflunch requer do uso de Javascript para uma melhor experiencia do usuário.
+                Se você tinha Javascript desativado, por favor ative-o de novo.</p>
+        </noscript>
+    {% endblock %}
+    {% block contenido %}<h1>Deberia cambiar el contenido, ¿no?</h1>{% endblock %}
+
+    {% block pie %}
+        {% block pieBootstrap%}
+             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+         <!-- Include all compiled plugins (below), or include individual files as needed -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        {% endblock%}
+    {% endblock %}
+
+    </div> <!-- container -->
+</body>
+</html>
