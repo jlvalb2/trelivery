@@ -1,7 +1,6 @@
 {% extends "basevisitantes" %}
 
 {% block visitantesContenido %}
-	{% include 'includes/nav1.html' %}
 	<h1>Hola Mundo</h1>
 	<p>Mi url deberia ser <strong>{{ request.path }}</strong></p>
 {% endblock visitantesContenido %}

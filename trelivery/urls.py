@@ -18,5 +18,9 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+]
+
+""" Por su caracter de "comodin" obligatoriamente tiene que ser la última """
+urlpatterns += [
     url(r'', include('visitantes.urls', namespace='visitantes')),
 ]

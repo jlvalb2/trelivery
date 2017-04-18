@@ -34,3 +34,23 @@ urlpatterns = [
     url(r'^cadastre-seu-restaurante/$', views.unica,
         {'plantilla': 'visitantes_entrada'}, name='cadastre-seu-restaurante'),
 ]
+
+""" urls de búsqueda de restaurantes """
+urlpatterns += [
+    url(r'^lista-restaurantes/(?P<cep>\d{2}\.\d{3}\-\d{3})/$',
+        views.restaurantesPorCEP,
+        {'plantilla': 'visitantes_listarestaurantes'},
+        name='restaurantesporcep'),
+    url(r'^lista-restaurantes/(?P<municipio>.+\-[A-Z]{2})/$',
+        views.restaurantesPorMunicipio,
+        {'plantilla': 'visitantes_listarestaurantes'},
+        name='restaurantesporcep'),
+]
+
+""" urls de acceso a cartas de restaurante """
+urlpatterns += [
+    url(r'^cardapio/(?P<restaurante>[A-Za-z-]+)/$',
+        views.muestraCarta,
+        {'plantilla': 'visitantes_carta'},
+        name='carta'),
+]
